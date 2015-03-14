@@ -1,15 +1,11 @@
-#
-# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
-# http://nette.org/security-warning
-#
 parameters:
 
+extensions:
+	dibi: Dibi\Bridges\Nette\DibiExtension22
 
 php:
 	date.timezone: Europe/Prague
 
-extensions:
-	dibi: Dibi\Bridges\Nette\DibiExtension22
 
 application:
 	errorPresenter: Error
@@ -19,9 +15,16 @@ application:
 
 session:
 	expiration: 14 days
-
+	savePath: "%tempDir%/sessions"
 
 services:
-	- App\Model\UserManager
-	- App\Forms\SignFormFactory
 	router: App\RouterFactory::createRouter
+	
+	authorizator: App\AclFactory::create
+
+	# Models
+	- App\Models\Acl
+	- App\Models\Users
+
+	# Forms
+	- \App\Forms\SignFormFactory
