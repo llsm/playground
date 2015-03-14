@@ -1,5 +1,5 @@
-Nette Sandbox
-=============
+LLSM's Nette Sandbox
+====================
 
 Sandbox is a pre-packaged and pre-configured Nette Framework application
 that you can use as the skeleton for your new applications.
@@ -30,4 +30,3 @@ directly via a web browser! See [security warning](http://nette.org/security-war
 License
 -------
 - Nette: New BSD License or GPL 2.0 or 3.0 (http://nette.org/license)
-- Adminer: Apache License 2.0 or GPL 2 (http://www.adminer.org)
