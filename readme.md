@@ -1,6 +1,13 @@
 LLSM's Nette Sandbox
 ====================
 
+Is Nette sandbox based app structure featuring modules with routing, dibi models and connection,
+database controlled ACL (access control list), public front module with secured admin module.
+For personal purposes I will be trying to make this up to date with current Nette
+
+Nette Sandbox
+-------------
+
 Sandbox is a pre-packaged and pre-configured Nette Framework application
 that you can use as the skeleton for your new applications.
 
@@ -9,8 +16,8 @@ It is designed to be the most usable and friendliest as possible. It focuses
 on security and performance and is definitely one of the safest PHP frameworks.
 
 
-Instal
-----------
+Instaling Nette Sandbox
+-----------------------
 
 The best way to install Sandbox is using Composer. If you don't have Composer yet, download
 it following [the instructions](http://doc.nette.org/composer). Then use command:
@@ -26,6 +33,11 @@ then visit `http://localhost:8888` in your browser.
 It is CRITICAL that whole `app`, `log` and `temp` directories are NOT accessible
 directly via a web browser! See [security warning](http://nette.org/security-warning).
 
+Using this project
+------------------
+
+If youre trying to use this project, bear in mind its really a playground for me and
+it can change anytime.
 
 License
 -------
