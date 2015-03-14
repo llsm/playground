@@ -2,55 +2,44 @@
 
 namespace App\Forms;
 
-use Nette,
-	Nette\Application\UI\Form,
-	Nette\Security\User;
+class SignFormFactory extends \Nette\Object {
 
-
-class SignFormFactory extends Nette\Object
-{
-	/** @var User */
+	/** @var \Nette\Security\User */
 	private $user;
 
-
-	public function __construct(User $user)
-	{
+	public function __construct(\Nette\Security\User $user) {
 		$this->user = $user;
 	}
 
-
 	/**
-	 * @return Form
+	 * @return \Nette\Application\UI\Form
 	 */
-	public function create()
-	{
-		$form = new Form;
-		$form->addText('username', 'Username:')
-			->setRequired('Please enter your username.');
+	public function create() {
+		$form = new \Nette\Application\UI\Form;
+		$form->addText('username', 'Jméno:')
+				->setRequired('Zadejte uživatelské jméno');
 
-		$form->addPassword('password', 'Password:')
-			->setRequired('Please enter your password.');
+		$form->addPassword('password', 'Heslo')
+				->setRequired('Zadejte heslo');
 
-		$form->addCheckbox('remember', 'Keep me signed in');
+		$form->addCheckbox('remember', 'Udržovat přihlášení trvale');
 
 		$form->addSubmit('send', 'Sign in');
-
+		
 		$form->onSuccess[] = array($this, 'formSucceeded');
 		return $form;
 	}
 
-
-	public function formSucceeded($form, $values)
-	{
+	public function formSucceeded($form, $values) {
 		if ($values->remember) {
-			$this->user->setExpiration('14 days', FALSE);
+			$this->user->setExpiration('30 days', FALSE);
 		} else {
-			$this->user->setExpiration('20 minutes', TRUE);
+			$this->user->setExpiration('30 minutes', TRUE);
 		}
 
 		try {
 			$this->user->login($values->username, $values->password);
-		} catch (Nette\Security\AuthenticationException $e) {
+		} catch (\Nette\Security\AuthenticationException $e) {
 			$form->addError($e->getMessage());
 		}
 	}
