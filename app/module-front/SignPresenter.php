@@ -17,7 +17,7 @@ class SignPresenter extends BasePresenter {
 	protected function createComponentSignInForm() {
 		$form = $this->factory->create();
 		$form->onSuccess[] = function ($form) {
-			$form->getPresenter()->redirect(':Front:Homepage:');
+			$form->getPresenter()->redirect(':Admin:Homepage:');
 		};
 		return $form;
 	}
