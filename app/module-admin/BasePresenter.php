@@ -34,7 +34,7 @@ abstract class BasePresenter extends \App\Presenters\BasePresenter {
 		}
 		
 		//check signal permission
-		dump($this->getSignal());
+		//dump($this->getSignal());
 	}
 	
 	protected function checkResource($name) {
