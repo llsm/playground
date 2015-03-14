@@ -1,7 +1,7 @@
 log/*
 temp/*
 vendor/*
-nbproject
+nbproject/
 !vendor/others
 
 .DS_Store
