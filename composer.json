@@ -22,5 +22,5 @@
 		"nette/nette": "~2.3",
 		"dibi/dibi": "~2.3"
 	},
-	"minimum-stability": "dev"
+	"minimum-stability": "stable"
 }
