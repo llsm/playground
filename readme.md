@@ -9,7 +9,7 @@ It is designed to be the most usable and friendliest as possible. It focuses
 on security and performance and is definitely one of the safest PHP frameworks.
 
 
-Installing
+Instal
 ----------
 
 The best way to install Sandbox is using Composer. If you don't have Composer yet, download
