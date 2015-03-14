@@ -8,6 +8,8 @@ parameters:
 php:
 	date.timezone: Europe/Prague
 
+extensions:
+	dibi: Dibi\Bridges\Nette\DibiExtension22
 
 application:
 	errorPresenter: Error
