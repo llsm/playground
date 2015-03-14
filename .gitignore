@@ -5,6 +5,7 @@ vendor/*
 
 .DS_Store
 !.gitignore
+!.nbproject/*
 !.htaccess
 !web.config
 app/config/config.local.neon
